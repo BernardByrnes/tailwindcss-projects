@@ -9,6 +9,11 @@
   </head>
   <body>
     <!-- Hover State Styling -->
+    <button
+      class="bg-black text-white py-2 px-4 rounded-lg m-6 hover:bg-green-600 hover:shadow hover:shadow-gray-700 transition duration-200 focus:bg-pink-500 active:bg-yellow-600"
+    >
+      Click me
+    </button>
 
     <!-- Focus State Styling -->
 
@@ -16,18 +21,44 @@
 
     <!-- Styling based on parent state -->
 
-    <!-- Pseudo Classes -->
+    <a
+      href=""
+      class="group block max-w-xs mx-auto rounded-lg p-6 bg-white shadow-lg space-y-3 hover:bg-sky-500 transition duration-200"
+    >
+      <h3 class="group-hover:text-white group-hover:font-bold">Card Title</h3>
+      <p class="group-hover:text-white group-hover:font-bold">
+        This is the card Text
+      </p>
+    </a>
 
+    <!-- Pseudo Classes -->
+    <ul>
+      <li class="first:bg-red-200">item 1</li>
+      <li class="first:bg-red-200">item 2</li>
+      <li class="first:bg-red-200">item 3</li>
+      <li class="first:bg-red-200">item 4</li>
+      <li class="first:bg-red-200">item 5</li>
+      <li class="first:bg-red-200">item 6</li>
+    </ul>
     <!-- Appearance -->
     <!-- Use appearance-none to reset any browser specific styling on an element. This utility is often used when creating custom form components. -->
-
+    <select>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
     <!-- Cursor -->
 
     <!-- Resize -->
 
     <!-- User Select -->
+    <div class="select-none">Lorem ipsum dolor sit amet.</div>
+    <div class="select-all">Lorem ipsum dolor sit amet.</div>
+    <div class="select-text">Lorem ipsum dolor sit amet.</div>
+    <div class="select-auto">Lorem ipsum dolor sit amet.</div>
 
     <!-- Smooth Scroll Example -->
+
+    <a href="#item" class="block my-6"></a>
   </body>
 </html>
 
