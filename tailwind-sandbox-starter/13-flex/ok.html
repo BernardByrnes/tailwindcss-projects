@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flex Demo: flex-none / initial / auto / 1</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .row {
+        border: 1px solid #ccc;
+        padding: 8px;
+        margin-bottom: 24px;
+      }
+
+      .label {
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+
+      .flex-container {
+        display: flex;
+        border: 1px solid #999;
+        padding: 6px;
+        gap: 6px;
+        background: #f9f9f9;
+      }
+
+      .box {
+        border: 1px solid #555;
+        padding: 6px;
+        background: #e5e7eb;
+        font-size: 13px;
+      }
+
+      .wide {
+        width: 200px;
+      }
+
+      .narrow {
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Demo</h1>
+    <p>
+      Same three items in each row, only changing the <code>flex</code> value of
+      the middle one.
+    </p>
+
+    <!-- flex-none -->
+    <div class="row">
+      <div class="label">
+        Middle item: <code>flex: none;</code> (<code>flex-none</code>)
+      </div>
+      <div class="flex-container">
+        <div class="box wide">Item 1 (width: 200px)</div>
+        <div class="box narrow" style="flex: none">
+          Item 2<br />
+          flex: none;<br />
+          (no grow, no shrink)
+        </div>
+        <div class="box wide">Item 3 (width: 200px)</div>
+      </div>
+      <p style="font-size: 13px; margin-top: 6px">
+        <strong>flex-none:</strong> Middle item keeps its set width and will not
+        grow or shrink. If the container is too small, it just overflows.
+      </p>
+    </div>
+
+    <!-- flex-initial -->
+    <div class="row">
+      <div class="label">
+        Middle item: <code>flex: 0 1 auto;</code> (<code>flex-initial</code>)
+      </div>
+      <div class="flex-container">
+        <div class="box wide">Item 1 (width: 200px)</div>
+        <div class="box narrow" style="flex: 0 1 auto">
+          Item 2<br />
+          flex: 0 1 auto;<br />
+          (can shrink, no grow)
+        </div>
+        <div class="box wide">Item 3 (width: 200px)</div>
+      </div>
+      <p style="font-size: 13px; margin-top: 6px">
+        <strong>flex-initial:</strong> Middle item starts from its natural
+        width, can shrink if needed, but will not grow to take extra space.
+      </p>
+    </div>
+
+    <!-- flex-auto -->
+    <div class="row">
+      <div class="label">
+        Middle item: <code>flex: 1 1 auto;</code> (<code>flex-auto</code>)
+      </div>
+      <div class="flex-container">
+        <div class="box wide">Item 1 (width: 200px)</div>
+        <div class="box narrow" style="flex: 1 1 auto">
+          Item 2<br />
+          flex: 1 1 auto;<br />
+          (grow &amp; shrink,<br />starting from content width)
+        </div>
+        <div class="box wide">Item 3 (width: 200px)</div>
+      </div>
+      <p style="font-size: 13px; margin-top: 6px">
+        <strong>flex-auto:</strong> Middle item can grow and shrink, but its
+        <em>natural size</em> (content / width) still matters when space is
+        shared.
+      </p>
+    </div>
+
+    <!-- flex-1 -->
+    <div class="row">
+      <div class="label">
+        Middle item: <code>flex: 1 1 0%;</code> (<code>flex-1</code>)
+      </div>
+      <div class="flex-container">
+        <div class="box wide">Item 1 (width: 200px)</div>
+        <div class="box narrow" style="flex: 1 1 0%">
+          Item 2<br />
+          flex: 1 1 0%;<br />
+          (grow &amp; shrink,<br />start from 0)
+        </div>
+        <div class="box wide">Item 3 (width: 200px)</div>
+      </div>
+      <p style="font-size: 13px; margin-top: 6px">
+        <strong>flex-1:</strong> Middle item grows and shrinks, but its
+        <em>base size is treated as 0</em>. It tries to share the available
+        space evenly with other flex items that can grow.
+      </p>
+    </div>
+  </body>
+</html>
