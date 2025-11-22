@@ -9,9 +9,16 @@
   </head>
   <body>
     <!-- Positioning -->
-
+    <div class="relative h-12 bg-red-200 w-1/2">
+      <p>Parent Element</p>
+      <div class="absolute bottom-0 right-0 bg-red-500">
+        <p>Absolute Child</p>
+      </div>
+    </div>
     <!-- Top left corner -->
-
+    <div class="relative h-32 w-32 bg-yellow-400">
+      <p class="absolute left-0 top-0 h-16 w-16 bg-green-400"></p>
+    </div>
     <!-- Top right corner -->
 
     <!-- Bottom left corner -->
